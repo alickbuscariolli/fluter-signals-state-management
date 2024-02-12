@@ -8,7 +8,7 @@ class TodoController {
     final notCompletedTodos = todos.where((todo) => !todo.completed);
 
     if (todos.isEmpty) {
-      return "Você ainda não possui nenhuma tarefa";
+      return "Você não possui nenhuma tarefa";
     } else if (notCompletedTodos.isEmpty) {
       return "Parabéns! Todas as tarefas estão completas!";
     }

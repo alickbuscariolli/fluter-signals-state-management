@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:signal_demo/controllers/todo_controller.dart';
 import 'package:signal_demo/models/todo_model.dart';
+import 'package:signal_demo/screens/todos_screen.dart';
 
 class AddTodoFormWidget extends StatefulWidget {
-  final TodoController todoCtrl;
-
-  const AddTodoFormWidget(this.todoCtrl, {super.key});
+  const AddTodoFormWidget({super.key});
 
   @override
   State<AddTodoFormWidget> createState() => _AddTodoFormWidgetState();
@@ -18,7 +16,7 @@ class _AddTodoFormWidgetState extends State<AddTodoFormWidget> {
 
   void onAddTodo() {
     if (formKey.currentState!.validate()) {
-      widget.todoCtrl.addTodo(TodoModel(titleTEC.text, descriptionTEC.text));
+      todoCtrl.addTodo(TodoModel(titleTEC.text, descriptionTEC.text));
       Navigator.pop(context);
     }
   }

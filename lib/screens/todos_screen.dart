@@ -10,9 +10,9 @@ class TodosScreen extends StatefulWidget {
   State<TodosScreen> createState() => _TodosScreenState();
 }
 
-class _TodosScreenState extends State<TodosScreen> {
-  final todoCtrl = TodoController();
+final todoCtrl = TodoController();
 
+class _TodosScreenState extends State<TodosScreen> {
   @override
   Widget build(BuildContext context) {
     final todos = todoCtrl.todos;
@@ -28,7 +28,7 @@ class _TodosScreenState extends State<TodosScreen> {
         actions: [
           IconButton(
             onPressed: () => showModalBottomSheet(
-                context: context, builder: (_) => AddTodoFormWidget(todoCtrl)),
+                context: context, builder: (_) => const AddTodoFormWidget()),
             icon: const Icon(Icons.add, color: Colors.white),
           )
         ],
