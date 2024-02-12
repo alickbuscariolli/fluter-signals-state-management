@@ -16,7 +16,8 @@ class _AddTodoFormWidgetState extends State<AddTodoFormWidget> {
 
   void onAddTodo() {
     if (formKey.currentState!.validate()) {
-      todoCtrl.addTodo(TodoModel(titleTEC.text, descriptionTEC.text));
+      todoCtrl
+          .addTodo(TodoModel(titleTEC.text, description: descriptionTEC.text));
       Navigator.pop(context);
     }
   }

@@ -3,16 +3,11 @@ import 'package:signal_demo/controllers/todo_controller.dart';
 import 'package:signal_demo/widgets/add_todo_form_widget.dart';
 import 'package:signals/signals_flutter.dart';
 
-class TodosScreen extends StatefulWidget {
-  const TodosScreen({super.key});
-
-  @override
-  State<TodosScreen> createState() => _TodosScreenState();
-}
-
 final todoCtrl = TodoController();
 
-class _TodosScreenState extends State<TodosScreen> {
+class TodosScreen extends StatelessWidget {
+  const TodosScreen({super.key});
+
   @override
   Widget build(BuildContext context) {
     final todos = todoCtrl.todos;
@@ -70,7 +65,7 @@ class _TodosScreenState extends State<TodosScreen> {
                       ),
                     ),
                     subtitle: Text(
-                      todo.title,
+                      todo.description ?? '',
                       style: const TextStyle(
                         color: Colors.white,
                         fontSize: 16,

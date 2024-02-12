@@ -3,10 +3,10 @@ import 'package:uuid/uuid.dart';
 class TodoModel {
   final String id;
   final String title;
-  final String description;
+  final String? description;
   final bool completed;
 
-  TodoModel(this.title, this.description, {String? idC, bool? completedC})
+  TodoModel(this.title, {this.description, String? idC, bool? completedC})
       : id = idC ?? const Uuid().v4(),
         completed = completedC ?? false;
 
@@ -19,7 +19,7 @@ class TodoModel {
     return TodoModel(
       idC: id ?? this.id,
       title ?? this.title,
-      description ?? this.description,
+      description: description ?? this.description,
       completedC: completed ?? this.completed,
     );
   }
